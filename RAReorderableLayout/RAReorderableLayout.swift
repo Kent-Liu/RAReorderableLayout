@@ -291,7 +291,7 @@ open class RAReorderableLayout: UICollectionViewFlowLayout, UIGestureRecognizerD
             self.delegate?.collectionView(self.collectionView!, at: atIndexPath, didMoveTo: toIndexPath)
             }, completion:nil)
     }
-    
+    @objc
     internal func continuousScroll() {
         guard let fakeCell = cellFakeView else { return }
         
@@ -397,6 +397,7 @@ open class RAReorderableLayout: UICollectionViewFlowLayout, UIGestureRecognizerD
     }
     
     // long press gesture
+    @objc
     internal func handleLongPress(_ longPress: UILongPressGestureRecognizer!) {
         let location = longPress.location(in: collectionView)
         var indexPath: IndexPath? = collectionView?.indexPathForItem(at: location)
@@ -438,6 +439,7 @@ open class RAReorderableLayout: UICollectionViewFlowLayout, UIGestureRecognizerD
     }
     
     // pan gesture
+    @objc
     func handlePanGesture(_ pan: UIPanGestureRecognizer!) {
         panTranslation = pan.translation(in: collectionView!)
         if let cellFakeView = cellFakeView,
