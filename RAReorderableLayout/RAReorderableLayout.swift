@@ -236,7 +236,7 @@ open class RAReorderableLayout: UICollectionViewFlowLayout, UIGestureRecognizerD
         }
         
         displayLink = CADisplayLink(target: self, selector: #selector(RAReorderableLayout.continuousScroll))
-        displayLink!.add(to: RunLoop.main, forMode: RunLoopMode.commonModes)
+      displayLink!.add(to: RunLoop.main, forMode: RunLoop.Mode.commonModes)
     }
     
     fileprivate func invalidateDisplayLink() {
